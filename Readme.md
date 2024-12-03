@@ -14,6 +14,13 @@
 4. Payment Gateway
 
 ## milestone-2
-1. styled using Tailwind CSS for styling to make the page look nice and consistent. It provides utility classes for responsive design and simple customization.
-2. Login Form: Includes basic fields for Email and Password along with a Login button.
-3. Forgot Password and Sign Up Links: Added text buttons for Forgot Password? and New User? Sign Up for better navigation.
+### Project Setup:
+- Set up a React app for the frontend and configured the basic structure for the application.
+- Set up the Tailwind CSS framework to style the application efficiently using utility classes.
+- Organized the project into **frontend** and **backend** folders (currently backend is set up, but not fully integrated).
+
+### Login Page:
+- Created the **Login Page** with **Email** and **Password** input fields.
+- Added **Forgot Password?** and **New User? Sign Up** links for additional functionality.
+
+-- THANKYOU -- 
