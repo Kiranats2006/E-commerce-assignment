@@ -14,6 +14,6 @@
 4. Payment Gateway
 
 ## milestone-2
-1. styled using Tailwind CSS for styling to make the page look nice and consistent. It provides utility classes for responsive design and simple customization.
+1. styled using Tailwind CSS for styling to make the page look nice and consistent.
 2. Login Form: Includes basic fields for Email and Password along with a Login button.
 3. Forgot Password and Sign Up Links: Added text buttons for Forgot Password? and New User? Sign Up for better navigation.
