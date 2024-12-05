@@ -36,4 +36,17 @@
 3. **Error Handling**:  
    - Implemented basic error handling to manage server errors and provide better debugging messages.
 
+## **Milestone 4**
+1. **Create a User Model**:
+   - Design a blueprint for how user data (e.g., name, email, password) is stored in the database.
+   - Understand and implement schemas in MongoDB.
+
+2. **Build a User Controller**:
+   - Manage user-related actions like adding new users or retrieving their information.
+   - Learn how controllers act as the "managers" of your backend.
+
+3. **Enable File Uploads with Multer**:
+   - Configure Multer to accept and store files uploaded by users (like profile pictures).
+   - Use Multer to handle file storage efficiently.
+
 -- THANKYOU -- 
