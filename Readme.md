@@ -23,4 +23,19 @@
 - Created the **Login Page** with **Email** and **Password** input fields.
 - Added **Forgot Password?** and **New User? Sign Up** links for additional functionality.
 
+
+## **Milestone 3**
+
+### **Project Overview**  
+1. **Backend Setup**:  
+   - Set up a Node.js server using Express.  
+   - Connected the server to MongoDB for data storage.
+
+2. **Folder Structure**:  
+   - Organized the backend into folders: `controllers`, `models`, `routes`, `middlewares`, and `utils`.
+
+3. **Error Handling**:  
+   - Implemented basic error handling to manage server errors and provide better debugging messages.
+
 -- THANKYOU -- 
+
