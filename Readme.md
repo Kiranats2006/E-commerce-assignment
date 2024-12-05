@@ -23,7 +23,6 @@
 - Created the **Login Page** with **Email** and **Password** input fields.
 - Added **Forgot Password?** and **New User? Sign Up** links for additional functionality.
 
-
 ## **Milestone 3**
 
 ### **Project Overview**  
