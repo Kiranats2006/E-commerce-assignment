@@ -23,13 +23,6 @@
 - Created the **Login Page** with **Email** and **Password** input fields.
 - Added **Forgot Password?** and **New User? Sign Up** links for additional functionality.
 
-
-Here’s a concise version of the README file for Milestone 3:
-
----
-
-# **E-commerce Website**
-
 ## **Milestone 3**
 
 ### **Project Overview**  
