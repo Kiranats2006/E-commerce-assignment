@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function LoginPage() {
     const [formData, setFormData]=useState({
         email:"",
@@ -12,6 +12,7 @@ export default function LoginPage() {
             [name]:value,
         })))
     }
+
 
   return (
     <div className="flex items-center justify-center h-screen bg-gradient-to-r from-pink-500 via-green-500 to-pink-500 font-serif">
@@ -62,7 +63,8 @@ export default function LoginPage() {
         </div>
         <div className="mt-4 text-center">
           <button className="text-green-500 hover:text-blue-500 hover:underline">
-            New User? Sign Up
+            
+            <Link to={'/signup'}>New User? Sign Up</Link>
           </button>
         </div>
       </form>
