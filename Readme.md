@@ -49,7 +49,20 @@
    - Configure Multer to accept and store files uploaded by users (like profile pictures).
    - Use Multer to handle file storage efficiently.
 
-   
+## **Milestone 5**
+
+1. **Create a Sign-Up Page**:
+   - Build a user-friendly UI with **Name**, **Email**, and **Password** fields.
+   - Style the form using **Tailwind CSS** for a clean design.
+
+2. **Add Form Validation**:
+   - Validate **email** format and **password** strength (e.g., minimum length).
+   - Display error messages for invalid inputs.
+
+3. **Update README**:
+   - Document the progress and steps taken for Milestone 5.
+
+
 
 -- THANKYOU -- 
 
