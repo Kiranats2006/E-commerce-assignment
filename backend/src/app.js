@@ -1,15 +1,21 @@
-if(process.env.NODE_ENV !=='PRODUCTION'){
-    require('dotenv').config({
-        path:'./src/config/.env',
-    })
-}
-const express= require('express');
-const app=express();
-const userRouter=require('./routes/user.route')
-const connectDataBase=require('./DB/database.js')
+const express = require('express');
+const userRouter = require('./routes/user.route.js');
 
-app.get('/',(req,res)=>{
-    return res.send({ message: 'Good Afternoon'})
+if (process.env.NODE_ENV !== 'PRODUCTION') {
+  require('dotenv').config({
+    path: './src/config/.env',
+  });
+}
+
+const app = express();
+// M6
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  return res.send('Welcome to backend');
 });
 
-module.exports=app;
+app.use('/user', userRouter);
+
+// connecting the database and running the server
+module.exports = app;
