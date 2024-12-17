@@ -59,10 +59,13 @@
    - Validate **email** format and **password** strength (e.g., minimum length).
    - Display error messages for invalid inputs.
 
-3. **Update README**:
-   - Document the progress and steps taken for Milestone 5.
 
-
+## **Milestone 7**
+- Hash Password: Use bcrypt to hash the password during signup.
+- Store Hashed Password: Save the hashed password in the database.
+- Login Endpoint: Accept email/username and password.
+- Fetch User: Retrieve user by email/username.
+- Validate Password: Compare the entered password with the hashed one using bcrypt.compare(). If they match, authenticate the user; otherwise, return an error.
 
 -- THANKYOU -- 
 
