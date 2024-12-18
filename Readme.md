@@ -67,5 +67,9 @@
 - Fetch User: Retrieve user by email/username.
 - Validate Password: Compare the entered password with the hashed one using bcrypt.compare(). If they match, authenticate the user; otherwise, return an error.
 
+## **Milestone 8**
+- Create the card component with props.
+- Design the homepage layout using grid or flexbox.
+
 -- THANKYOU -- 
 
