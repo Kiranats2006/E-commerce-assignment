@@ -2,13 +2,13 @@ import { useState } from "react";
 import Card from "../components/ProdCard/Card";
 
 function HomePage() {
-  const [data, setData] = useState(
+  const [data, ] = useState(
     new Array(20).fill(null).map(() => ({ title: "Product Title" }))
   );
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-500 via-green-500 to-pink-500 font-serif">
-      <div className="bg-white p-8 shadow-lg rounded-lg max-w-6xl w-full z-10">
+      <div className="p-8 shadow-lg rounded-lg max-w-6xl w-full z-10">
         <h2 className="text-3xl font-bold mb-8 text-center text-purple-500">
           Our Products
         </h2>
