@@ -71,10 +71,7 @@
 - Create the card component with props.
 - Design the homepage layout using grid or flexbox.
 
-Here’s the updated README content from Milestone 9 to 12:
-
----
-
+  
 ## Milestone 9  
  
 - Created a form to add products, allowing multiple product images as input.  
