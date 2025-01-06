@@ -56,8 +56,7 @@ const createProductController = async (req, res) => {
 };
 
 
-const getProductController= async (req,res)=>{
-  const {email, password}=req.body;
+const getProductDataController= async (req,res)=>{
   try {
     const data= await ProductModel.find();
     return res.status(200).send({data, message:"Data fetched successfully"})
@@ -67,4 +66,4 @@ const getProductController= async (req,res)=>{
   }
 }
 // controller
-module.exports = { createProductController, getProductController };
+module.exports = { createProductController, getProductDataController };
