@@ -71,5 +71,43 @@
 - Create the card component with props.
 - Design the homepage layout using grid or flexbox.
 
--- THANKYOU -- 
+Here’s the updated README content from Milestone 9 to 12:
+
+---
+
+## Milestone 9  
+ 
+- Created a form to add products, allowing multiple product images as input.  
+- Encouraged experimentation with additional features such as:  
+  - Adding admin access to restrict product uploads.  
+  - Creating shop profiles to allow only shop users to upload products.  
+
+---
+
+## Milestone 10  
+
+1. **Product Schema**:  
+   - Defined the structure of product data with proper validations.  
+2. **Endpoint Creation**:  
+   - Built a POST endpoint to receive product data and store it in MongoDB.  
+   - Validated data to maintain database integrity.  
+
+---
+
+## Milestone 11  
+
+1. Wrote an endpoint to send all product data to the frontend.  
+2. Created a frontend function to fetch the data.  
+3. Dynamically displayed the data using the product card component.  
+
+---
+
+## Milestone 12  
+ 
+1. Wrote an endpoint to filter products by user email.  
+2. Created a frontend function to fetch the filtered data.  
+3. Dynamically displayed the filtered data using the product card component.  
+
+
+
 
