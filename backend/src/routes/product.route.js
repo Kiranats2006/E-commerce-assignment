@@ -4,7 +4,7 @@ const upload = multer({ dest: './temp-uploads' });
 const express = require('express');
 const {
   createProductController, getProductDataController,
-  updateProductController, getSinglePRoductDocumentController,
+  updateProductController, getSinglePRoductDocumentController, deleteSingleProduct,
 } = require('../controllers/product.controller');
 const router = express.Router();
 
@@ -21,4 +21,5 @@ router.put(
 );
 
 router.get('/get-single/:id', getSinglePRoductDocumentController);
+router.delete('/:id', deleteSingleProduct);
 module.exports = router;
