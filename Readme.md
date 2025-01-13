@@ -105,6 +105,27 @@
 2. Created a frontend function to fetch the filtered data.  
 3. Dynamically displayed the filtered data using the product card component.  
 
+## Milestone 13 (Updation)
 
+Backend: PUT route for updateing
+Frontend: Page for auto filling the updated data [id] except images fetch data from backend and once we have data in frontend we fill the input boxes with that data
+
+---
+## milestone 14
+
+DELETE route in the backend
+Delete button at the frontend
+
+--- 
+
+## MileStone 15
+
+Added Navbar component (Mobile Responsive with Drop Down)
+
+---
+
+## MileStone 16
+Added Single Page product Details
+Created Image Modal Component
 
 
