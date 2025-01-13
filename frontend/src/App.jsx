@@ -6,9 +6,11 @@ import Signup from './Pages/Signup';
 import Login from './Pages/Login';
 import ProductEntryPage from './Pages/ProductEntryPage';
 import UpdateForm from './Pages/updateForm';
+import NavBar from './components/NavBar/NavBar';
 function App() {
   return (
     <>
+    <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<Signup />} />
