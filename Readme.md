@@ -67,5 +67,87 @@
 - Fetch User: Retrieve user by email/username.
 - Validate Password: Compare the entered password with the hashed one using bcrypt.compare(). If they match, authenticate the user; otherwise, return an error.
 
--- THANKYOU -- 
+## **Milestone 8**
+- Create the card component with props.
+- Design the homepage layout using grid or flexbox.
 
+  
+## Milestone 9  
+ 
+- Created a form to add products, allowing multiple product images as input.  
+- Encouraged experimentation with additional features such as:  
+  - Adding admin access to restrict product uploads.  
+  - Creating shop profiles to allow only shop users to upload products.  
+
+---
+
+## Milestone 10  
+
+1. **Product Schema**:  
+   - Defined the structure of product data with proper validations.  
+2. **Endpoint Creation**:  
+   - Built a POST endpoint to receive product data and store it in MongoDB.  
+   - Validated data to maintain database integrity.  
+
+---
+
+## Milestone 11  
+
+1. Wrote an endpoint to send all product data to the frontend.  
+2. Created a frontend function to fetch the data.  
+3. Dynamically displayed the data using the product card component.  
+
+---
+
+## Milestone 12  
+ 
+1. Wrote an endpoint to filter products by user email.  
+2. Created a frontend function to fetch the filtered data.  
+3. Dynamically displayed the filtered data using the product card component.  
+
+## Milestone 13 (Updation)
+
+Backend: PUT route for updateing
+Frontend: Page for auto filling the updated data [id] except images fetch data from backend and once we have data in frontend we fill the input boxes with that data
+
+---
+## milestone 14
+
+DELETE route in the backend
+Delete button at the frontend
+
+--- 
+
+## MileStone 15
+
+Added Navbar component (Mobile Responsive with Drop Down)
+
+---
+
+## MileStone 16
+Added Single Page product Details
+Created Image Modal Component
+
+---
+
+## Milestone-17 
+ 
+1. **Edit User Schema**  
+   - Modified the schema to include a cart field for storing product details such as `productId`, `quantity`, and `price`.  
+
+2. **Cart API Endpoint**  
+   - Created an endpoint to handle adding products to the cart. Example:  
+  
+3. **Fetch Single Product Details**  
+   - Used `axios` in the frontend to fetch single product data dynamically based on the product ID:  
+     ```jsx
+     useEffect(() => {
+       const getProductSingleDetails = async () => {
+         const response = await axios.get(
+           `http://localhost:8080/product/get-single/${id}`
+         );
+         setProduct(response.data.data);
+       };
+       getProductSingleDetails();
+     }, [id]);
+     ```  
