@@ -6,11 +6,13 @@ const {
   createProductController, getProductDataController,
   updateProductController, getSinglePRoductDocumentController, deleteSingleProduct,
 } = require('../controllers/product.controller');
+const verifyUser = require('../middleware/jwt-verify');
 const router = express.Router();
 
 router.post(
   '/create-product',
   upload.array('files', 5),
+  verifyUser,
   createProductController
 );
 router.get('/get-products',getProductDataController);

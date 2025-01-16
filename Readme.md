@@ -71,6 +71,8 @@
 - Create the card component with props.
 - Design the homepage layout using grid or flexbox.
 
+---
+
   
 ## Milestone 9  
  
@@ -128,4 +130,26 @@ Added Navbar component (Mobile Responsive with Drop Down)
 Added Single Page product Details
 Created Image Modal Component
 
+---
 
+## Milestone-17 
+ 
+1. **Edit User Schema**  
+   - Modified the schema to include a cart field for storing product details such as `productId`, `quantity`, and `price`.  
+
+2. **Cart API Endpoint**  
+   - Created an endpoint to handle adding products to the cart. Example:  
+  
+3. **Fetch Single Product Details**  
+   - Used `axios` in the frontend to fetch single product data dynamically based on the product ID:  
+     ```jsx
+     useEffect(() => {
+       const getProductSingleDetails = async () => {
+         const response = await axios.get(
+           `http://localhost:8080/product/get-single/${id}`
+         );
+         setProduct(response.data.data);
+       };
+       getProductSingleDetails();
+     }, [id]);
+     ```  
