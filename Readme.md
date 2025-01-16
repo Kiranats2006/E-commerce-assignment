@@ -71,6 +71,8 @@
 - Create the card component with props.
 - Design the homepage layout using grid or flexbox.
 
+---
+
   
 ## Milestone 9  
  
