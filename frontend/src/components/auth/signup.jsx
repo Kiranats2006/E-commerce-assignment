@@ -1,29 +1,39 @@
 import { useState } from "react";
 import validation from "../../validation";
-import { Link } from "react-router-dom"; // Import Link for routing
+import { Link, useNavigate } from "react-router-dom"; // Import Link for routing
+import axios from 'axios';
 
 export default function SignUpPage() {
-  const [formData, setFormData] = useState({
+  const [data, setData] = useState({
     name: "",
     email: "",
     password: "",
     file: "",
   });
   const [error, setError] = useState("");
+  const navigateUser = useNavigate();
+
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    const { name, value, files } = e.target;
+    if(name=='file'){
+      setData({
+        ...data,
+        [name]: files[0],
+      });
+    }else{
+      setData({
+        ...data,
+        [name]:value
+      })
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); 
-    const nameV = validation.validateName(formData.name);
-    const emailV = validation.validateEmail(formData.email);
-    const PassV = validation.validatePass(formData.password);
+    const nameV = validation.validateName(data.name);
+    const emailV = validation.validateEmail(data.email);
+    const PassV = validation.validatePass(data.password);
 
     if (typeof nameV === "string" && nameV.length > 1) {
       return setError(nameV);
@@ -34,7 +44,23 @@ export default function SignUpPage() {
     if (typeof PassV === "string" && PassV.length > 2) {
       return setError(PassV);
     }
+    setError('');
 
+    const formDataBody = new FormData();
+    formDataBody.append('email', data.email);
+    formDataBody.append('password',data.password);
+    formDataBody.append('name', data.name);
+    formDataBody.append('file',data.file);
+    try{
+      await axios.post('http://localhost:8080/user/signup',formDataBody,{
+        headers:{
+          'Content-Type':'multipart/form-data'
+        }
+      })
+      navigateUser('/login');
+    }catch(error){
+      console.log('Something wrong happened',error.message);
+    }
   };
 
   return (
@@ -63,7 +89,7 @@ export default function SignUpPage() {
             placeholder="Enter your name"
             required
             className="w-full border border-gray-290 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            value={formData.name}
+            value={data.name}
             onChange={handleChange}
           />
         </div>
@@ -79,7 +105,7 @@ export default function SignUpPage() {
             placeholder="Enter your email"
             required
             className="w-full border border-gray-290 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            value={formData.email}
+            value={data.email}
             onChange={handleChange}
           />
         </div>
@@ -95,7 +121,7 @@ export default function SignUpPage() {
             placeholder="Enter your password"
             required
             className="w-full border border-gray-290 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400"
-            value={formData.password}
+            value={data.password}
             onChange={handleChange}
           />
         </div>

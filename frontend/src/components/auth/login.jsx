@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 export default function LoginPage() {
     const [formData, setFormData]=useState({
         email:"",
         password:"",
     });
+const navigate = useNavigate();
+
     const handleChange=(e)=>{
         const {name,value}=e.target;
         setFormData((prevData=>({
@@ -12,11 +15,17 @@ export default function LoginPage() {
             [name]:value,
         })))
     }
+    const handleClickLogin = async () => {
+      const response = await axios.post('http://localhost:8080/user/login');
+      localStorage.setItem('token', response.data.token);
+      console.log("Logging in with:", formData);
+      navigate('/');
+    }
 
 
   return (
     <div className="flex items-center justify-center h-screen bg-gradient-to-r from-pink-500 via-green-500 to-pink-500 font-serif">
-        <form className="bg-white p-8">
+        <form className="bg-white p-8" onSubmit={handleClickLogin}>
             <div className="text-center mb-6">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSlgUtYQLmh29X34jsMTp3LWUZIJAxNODrRkEOPXIbWToqH8yqNCS95CIyBh2xzwxJYKs&usqp=CAU" alt="Logo" className="w-35 mx-auto" />
             </div>
