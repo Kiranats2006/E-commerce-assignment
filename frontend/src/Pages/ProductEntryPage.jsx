@@ -63,9 +63,10 @@ function ProductEntryPage() {
     images.forEach((ele) => {
       formDataBody.append("files", ele);
     });
+    const token=localStorage.getItem('token')
 
     axios
-      .post("http://localhost:8080/product/create-product", formDataBody, {
+      .post(`http://localhost:8080/product/create-product?token=${token}`, formDataBody, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -2,11 +2,12 @@
 const multer = require('multer');
 const upload = multer({ dest: './temp-uploads' });
 const express = require('express');
+const verifyUser = require('../middleware/jwt-verify');
+
 const {
   createProductController, getProductDataController,
   updateProductController, getSinglePRoductDocumentController, deleteSingleProduct,
 } = require('../controllers/product.controller');
-const verifyUser = require('../middleware/jwt-verify');
 const router = express.Router();
 
 router.post(
