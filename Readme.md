@@ -155,3 +155,7 @@ Created Image Modal Component
 ## Milestone 18
 - endpoint to receive request from cart page.
 - backend endpoint to fetch all the products inside cart with user mail.
+
+## Milestone-19
+- add product
+- 

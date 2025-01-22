@@ -132,7 +132,7 @@ const signup = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const checkUserPresentinDB = await userModel.findOne({ email: email });
+    const checkUserPresentinDB = await UserModel.findOne({ email: email });
 
     bcrypt.compare(
       password,
