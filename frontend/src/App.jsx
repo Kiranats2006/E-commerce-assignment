@@ -8,6 +8,8 @@ import ProductEntryPage from './Pages/ProductEntryPage';
 import UpdateForm from './Pages/updateForm';
 import NavBar from './components/NavBar/NavBar';
 import SinglePageProduct from './Pages/SingleProductPage';
+import CartPage from './Pages/CartPage';
+import ProfilePage from './Pages/profile';
 function App() {
   return (
     <>
@@ -19,6 +21,8 @@ function App() {
         <Route path="/product-entry-page" element={<ProductEntryPage />} />
         <Route path="/update-form/:id" element={<UpdateForm/>}/>
         <Route path="/product-details/:id" element={<SinglePageProduct />}/>
+        <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/profile" element={<ProfilePage/>}/>
       </Routes>
     </>
   );
