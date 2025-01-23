@@ -4,7 +4,7 @@ const cartModel = require("../models/cart.model");
 async function AddToCartController(req, res) {
   const { productId, quantity } = req.body;
   const userId = req.userId;
-  console.log(req.body);
+  console.log(userId);
   try {
     if (!mongoose.Types.ObjectId.isValid(productId)) {
       return res.status(400).send({ message: "Send Valid Product ID" });

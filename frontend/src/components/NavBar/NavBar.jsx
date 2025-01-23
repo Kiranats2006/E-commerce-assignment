@@ -114,7 +114,7 @@ function NavBar(){
                      : 'text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm transition-colors duration-200'
                  }
                >
-                 Cart
+                 Profiles
                </NavLink>
            </ul>
          </div>

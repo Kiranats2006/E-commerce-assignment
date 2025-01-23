@@ -158,5 +158,24 @@ const login = async (req, res) => {
     return res.status(403).send({ message: er.message, success: false });
   }
 };
+const getUSerData = async (req, res) => {
+  const userId = req.UserId;
+  try {
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(401).send({ message: 'Send Valid User Id' });
+    }
 
-module.exports = { CreateUSer, verifyUserController, signup, login };
+    const checkUserPresentinDB = await UserModel.findOne({ _id: userId });
+    if (!checkUserPresentinDB) {
+      return res
+        .status(401)
+        .send({ message: 'Please Signup, user not present' });
+    }
+
+    return res.status(200).send({ data: checkUserPresentinDB });
+  } catch (er) {
+    return res.status(500).send({ message: er.message });
+  }
+};
+
+module.exports = { CreateUSer, verifyUserController, signup, login, getUSerData };

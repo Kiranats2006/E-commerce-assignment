@@ -156,6 +156,10 @@ Created Image Modal Component
 - endpoint to receive request from cart page.
 - backend endpoint to fetch all the products inside cart with user mail.
 
-## Milestone-19
-- add product
-- 
+## Milestone 19
+- Added Cart UI
+- Fetched Cart Details of the User
+
+## milestone 20
+- Added UI for profile route
+- ceated route for user data
