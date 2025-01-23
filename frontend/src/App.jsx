@@ -9,7 +9,7 @@ import UpdateForm from './Pages/updateForm';
 import NavBar from './components/NavBar/NavBar';
 import SinglePageProduct from './Pages/SingleProductPage';
 import CartPage from './Pages/CartPage';
-import ProfilePage from './Pages/profile';
+import ProfilePage from './Pages/Profile';
 function App() {
   return (
     <>

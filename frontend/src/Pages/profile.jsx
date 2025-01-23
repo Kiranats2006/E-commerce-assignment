@@ -1,8 +1,5 @@
-import profileCard from "../components/Profile/ProfileCard"
+import { ProfileCard } from '../components/Profile/ProfileCard';
 
-function ProfilePage(){
-    return(
-        <profileCard/>
-    )
+export default function ProfilePage() {
+  return <ProfileCard />;
 }
-export default ProfilePage

@@ -1,45 +1,44 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import CartCard from "../components/ProdCard/CartCard";
-// import SinglePageProduct from "./SingleProductPage";
-function CartPage() {
-   
-  const [usersCartData, setUsersCartData] = useState([]);
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import CartCard from '../components/ProdCard/CartCard';
+
+function CardPage() {
+  const [UsersCartData, setUsersCartData] = useState([]);
+
   useEffect(() => {
     const getCartData = async () => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem('token');
       if (!token) {
-        return alert("Token is missing");
+        return alert('Token is missing , Please login');
       }
       const response = await axios.get(
         `http://localhost:8080/cart/get-user-cart-data?token=${token}`
       );
-      console.log(response);
-      setUsersCartData(response.data.CartCard);
+      console.log(response.data);
+      setUsersCartData(response.data.cartData);
     };
+
     getCartData();
   }, []);
   return (
     <div>
-      {usersCartData?.map((singleCartObject, index) => {
+      {UsersCartData?.map((singleCartObject, index) => {
         return (
           <div key={index}>
             <CartCard
-              title={singleCartObject.title}
-              image={singleCartObject.images?.[0] ? singleCartObject.productId.images[0]:'Product Image missing'}
-              Index={index}
-              description={singleCartObject.description}
-              originalPrice={singleCartObject.originalPrice}
-              discountedPrice={singleCartObject.discountedPrice}
-              rating={singleCartObject.rating}
+              title={singleCartObject.productId.title}
+              image={singleCartObject.productId.images[0]}
+              description={singleCartObject.productId.description}
+              originalPrice={singleCartObject.productId.originalPrice}
+              discountedPrice={singleCartObject.productId.discountedPrice}
               id={singleCartObject._id}
-              createdBy={singleCartObject.userId}
+              createdBy={'kiranats2006@gmail.com'}
             />
           </div>
         );
       })}
-      {/* <CartCard /> */}
     </div>
   );
 }
-export default CartPage;
+
+export default CardPage;
