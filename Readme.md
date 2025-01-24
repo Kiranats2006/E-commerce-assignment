@@ -163,3 +163,12 @@ Created Image Modal Component
 ## milestone 20
 - Added UI for profile route
 - ceated route for user data
+
+## Milestone-21
+- created address form frontend page.
+- Created a state that will store input address.
+
+## Milestone-22
+- when we click on add address in profile it navigates to the address form page.
+- created an endpoint that will receive the address from address form in frontend
+- Added the address to the address array inside user collection.

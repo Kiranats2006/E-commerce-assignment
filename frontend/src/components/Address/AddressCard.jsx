@@ -1,4 +1,6 @@
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const AddressCard = () => {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
@@ -6,8 +8,9 @@ const AddressCard = () => {
   const [address2, setAddress2] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [addressType, setAddressType] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const addressData = {
       city,
@@ -18,11 +21,29 @@ const AddressCard = () => {
       addressType,
     };
     console.log("Submitted Address Data:", addressData);
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return alert("Token missing");
+    }
+    // eslint-disable-next-line no-unused-vars
+    const reponse = await axios.post(
+      `http://localhost:8080/user/add-address?token=${token}`,
+      addressData
+    );
+    navigate("/profile");
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "50px auto", fontFamily: "Arial, sans-serif" }}>
-      <h2 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>Address Form</h2>
+    <div
+      style={{
+        maxWidth: "500px",
+        margin: "50px auto",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <h2 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>
+        Address Form
+      </h2>
       <form
         onSubmit={handleSubmit}
         style={{
@@ -34,7 +55,13 @@ const AddressCard = () => {
       >
         {/* Country */}
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              fontWeight: "bold",
+            }}
+          >
             Country:
           </label>
           <input
@@ -52,10 +79,16 @@ const AddressCard = () => {
             }}
           />
         </div>
-  
+
         {/* City */}
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              fontWeight: "bold",
+            }}
+          >
             City:
           </label>
           <input
@@ -73,10 +106,16 @@ const AddressCard = () => {
             }}
           />
         </div>
-  
+
         {/* Address Line 1 */}
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              fontWeight: "bold",
+            }}
+          >
             Address Line 1:
           </label>
           <input
@@ -94,10 +133,16 @@ const AddressCard = () => {
             }}
           />
         </div>
-  
+
         {/* Address Line 2 */}
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              fontWeight: "bold",
+            }}
+          >
             Address Line 2:
           </label>
           <input
@@ -114,10 +159,16 @@ const AddressCard = () => {
             }}
           />
         </div>
-  
+
         {/* Zip Code */}
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              fontWeight: "bold",
+            }}
+          >
             Zip Code:
           </label>
           <input
@@ -135,10 +186,16 @@ const AddressCard = () => {
             }}
           />
         </div>
-  
+
         {/* Address Type */}
         <div style={{ marginBottom: "20px" }}>
-          <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              fontWeight: "bold",
+            }}
+          >
             Address Type:
           </label>
           <select
@@ -159,7 +216,7 @@ const AddressCard = () => {
             <option value="Other">Other</option>
           </select>
         </div>
-  
+
         {/* Submit Button */}
         <button
           type="submit"
@@ -179,7 +236,6 @@ const AddressCard = () => {
       </form>
     </div>
   );
-  
 };
 
 export default AddressCard;
