@@ -120,34 +120,42 @@ export function ProfileCard() {
             value={<span className="capitalize">{userData.role}</span>}
           />
 
-          <InfoSection
-            icon={
-              <svg
-                className="w-5 h-5 text-gray-600"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            }
-            label="Addresses"
-            value={
-              userData?.address?.length > 0 ? (
-                <ul className="list-disc list-inside">
-                  {/* {userData.address.map((addr, index) => (
-                      <li key={index}>{addr}</li>
-                    ))} */}
-                </ul>
-              ) : (
-                <span className="text-gray-400 italic">
-                  No addresses Founded
-                </span>
-              )
-            }
-          />
+<InfoSection
+  icon={
+    <svg
+      className="w-5 h-5 text-gray-600"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  }
+  label="Addresses"
+  value={
+    userData?.address?.length > 0 ? (
+      <ul className="list-disc list-inside">
+        {userData.address.map((addr, index) => (
+          <li key={index}>
+            <p>City: {addr.city}</p>
+            <p>Country: {addr.country}</p>
+            <p>Address 1: {addr.address1}</p>
+            <p>Address 2: {addr.address2}</p>
+            <p>Pin code: {addr.zipCode}</p>
+            <br />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <span className="text-gray-400 italic">
+        No addresses Found
+      </span>
+    )
+  }
+/>
+
         </div>
         {/* Edit Button */}
         <button className="mt-8 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
