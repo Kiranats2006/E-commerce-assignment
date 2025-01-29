@@ -6,6 +6,7 @@ const transporter = require("../utils/sendMail.js");
 const cloudinary = require("../utils/cloudinary.js");
 const fs = require("fs");
 const mongoose = require("mongoose");
+const { userInfo } = require("os");
 require("dotenv").config({
   path: "../config/.env",
 });
@@ -206,6 +207,25 @@ const addAddressController = async (req, res) => {
     return res.status(500).send({ message: er.message });
   }
 };
+const getAddressController=async(req,res)=>{
+  const userId=req.userId;
+  try {
+    if(!mongoose.Types.ObjectId.isValid(userId)){
+      return res.status(404).send({message:"Please login, un-authorized"})
+    }
+    const checkUser=await UserModel.findOne({_id:userId});
+    if(!checkUser){
+      return res.status(404).send({message:"Please signup, un-authorized"});
+    }
+    return res.status(200).send({
+      userInfo: checkUser,
+      message: "Success",
+      success: true,
+    })
+  } catch (error) {
+    return res.status(500).send({ message: er.message });
+  }
+}
 
 module.exports = {
   CreateUSer,
@@ -214,4 +234,5 @@ module.exports = {
   login,
   getUSerData,
   addAddressController,
+  getAddressController,
 };
