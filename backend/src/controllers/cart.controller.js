@@ -18,6 +18,7 @@ async function AddToCartController(req, res) {
     }
     const checkIfProdPresent = await cartModel.findOne({
       productId: productId,
+      userId,
     });
     if (checkIfProdPresent) {
       return res
@@ -46,13 +47,15 @@ async function getProducts(req, res) {
     if (!checkUserPresent) {
       return res.status(401).send({ message: "unoauthorized" });
     }
-    const data = await cartModel.find({ userId }).populate('productId');
+    const data = await cartModel
+      .find({ userId })
+      .populate("productId");
     return res.status(200).send({
       message: "Data is successfullt fetched",
       succes: true,
       cartData: data,
     });
-  } catch (error) {
+  } catch (err) {
     return res.status(500).send({ message: err.message, succes: false });
   }
 }
