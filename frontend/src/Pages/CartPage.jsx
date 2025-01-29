@@ -23,7 +23,7 @@ function CardPage() {
   }, []);
   return (
     <div>
-      <Link to={'/order-confirmation'}>
+      <Link to="/select-address">
       <button className='bg-slate-800 text-white px-2 py-5 rounded-md ml-40'>
         Checkout
       </button>
