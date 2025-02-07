@@ -182,7 +182,7 @@ const getUSerData = async (req, res) => {
 const addAddressController = async (req, res) => {
   const userId = req.userId;
   console.log(userId);
-  const { city, country, address1, address2, zipcode, addressType } = req.body;
+  const { city, country, address1, address2, zipCode, addressType } = req.body;
   try {
     const userFindOne = await UserModel.findOne({ _id: userId });
     if (!userFindOne) {
@@ -195,7 +195,7 @@ const addAddressController = async (req, res) => {
       city,
       address1,
       address2,
-      zipcode,
+      zipCode,
       addressType,
     };
     userFindOne.address.push(userAddress);

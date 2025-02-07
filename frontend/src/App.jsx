@@ -13,6 +13,7 @@ import ProfilePage from './Pages/Profile';
 import AddressCard from './components/Address/AddressCard';
 import SelectAdress from './Pages/SelectAdress';
 import OrderConfirmation from './Pages/OrderConfirmationPage';
+import OrderHistory from './Pages/Order-history';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/address-form" element={<AddressCard />} />
         <Route path="/select-address" element={<SelectAdress/>}/>
         <Route path='/order-confirmation' element={<OrderConfirmation/>}/>
+        <Route path="/order-history" element={<OrderHistory />} />
       </Routes>
     </>
   );
