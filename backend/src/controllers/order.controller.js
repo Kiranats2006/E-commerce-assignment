@@ -3,7 +3,7 @@ const OrderModel = require('../models/Order.model');
 const CartModel=require('../models/cart.model');
 const UserModel=require('../models/user.model')
 async function CreateOrderController(req, res) {
-  const userId = req.UserId;
+  const userId = req.userId;
   const { Items, address, totalAmount } = req.body;
   try {
     if (!mongoose.Types.ObjectId.isValid(userId)) {
@@ -45,7 +45,7 @@ async function CreateOrderController(req, res) {
   }
 }
 async function GetUserOrdersController(req, res) {
-    const userId = req.UserId;
+    const userId = req.userId;
     try {
       if (!mongoose.Types.ObjectId.isValid) {
         return res

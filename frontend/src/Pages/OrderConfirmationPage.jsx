@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import CartCard from '../components/ProdCard/CartCard';
@@ -51,6 +50,7 @@ export default function OrderConfirmation() {
     navigate('/order-history');
     console.log(response);
   };
+
   return (
     <div>
       <div>
@@ -97,8 +97,10 @@ export default function OrderConfirmation() {
             })}
         </div>
         <div className="flex justify-center mt-5">
-          <button className="px-5 py-2 rounded-lg bg-blue-500 text-white hover:bg-green-500"
-          onClick={OrderConfirmation}>
+          <button
+            className="px-5 py-2 rounded-lg bg-blue-500 text-white hover:bg-green-500"
+            onClick={OrderConfirmation}
+          >
             Confirm order
           </button>
         </div>
