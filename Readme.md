@@ -228,3 +228,47 @@ Created Image Modal Component
   - Fetches all orders associated with the authenticated user.
   - Verifies if the user exists and if the provided `userId` is valid.
   - If valid, fetches orders from the database and returns them to the client.
+
+
+#### **Milestone 27: Order History Page**  
+- **Create Order History Page** – Displays past orders with key details (date, items, status, total cost).  
+- **Fetch User Orders** – Send a GET request to the `GetUserOrders` endpoint to retrieve order data.  
+- **Display Orders** – Render order details clearly, including order ID, date, and status.  
+- **Navbar Update** – Add an "Orders" link for easy access, ensuring visibility in mobile view.  
+
+#### **Milestone 28: Order Cancellation**  
+- **Cancel Button** – Show an "X" button for uncanceled orders.  
+- **Hide for Canceled Orders** – Button remains hidden for already canceled orders.  
+- **Cancel Order API** – Create an endpoint to update order status to "Canceled".  
+- **Trigger Cancellation** – On button click, call the API and update the UI accordingly.  
+
+#### **Milestone 29 & 30: Razorpay Integration**  
+- **Set Up Razorpay** – Create an account and obtain API credentials.  
+- **Install Razorpay** – Add Razorpay integration for frontend/backend.  
+- **Payment Order API** – Backend API to generate a Razorpay order on checkout.  
+- **Confirm Order Button** – Triggers API call to create an order in Razorpay.  
+- **Razorpay Payment Modal** – Opens upon successful order creation.  
+
+#### **Milestone 31: Redux Setup**  
+- **Install React-Redux** – Enable state management.  
+- **Create Redux Store** – Organize files (`Store.js`, `userActions.js`).  
+- **Configure Store** – Use `userReducer` for managing user email.  
+- **Set Email Action** – Store user email in Redux.  
+- **Wrap App in Provider** – Provide global access to the Redux store.  
+
+#### **Milestone 32: Login & Email Management**  
+- **Login Page** – Dispatch method to store user email in Redux.  
+- **Other Pages** – Use `useSelector` to retrieve email from global state.  
+
+#### **Milestone 33: JWT Authentication & Security**  
+- **Token as Cookie** – JWT stored as a cookie on login.  
+- **Security Flags** – `httpOnly`, `secure`, `sameSite: 'Strict'` for protection.  
+- **Response Handling** – Sends success message and token upon login.  
+
+#### **Milestone 34: JWT-Based Authentication**  
+- **Secure Authentication** – JWT used for login and API communication.  
+- **Persistent Login** – JWT stored in cookies for session management.  
+
+#### **Milestone 35: Deployment**  
+- **Backend:** [Live](https://ecommerce-follow-along-judc.onrender.com)  
+- **Frontend:** [Live](https://ecom-follow-along.netlify.app)
